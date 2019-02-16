@@ -1,7 +1,7 @@
 ## Function constructs filePath
-filepath <- function(filename,pathToDirectory){
+filepath <- function(filename,pathToDirectory,compiler){
         #construct path 
-        csvFile <- paste(filename,"csv",sep = ".")
+        csvFile <- paste(filename,compiler,sep = ".")
         pathToFile <- paste(pathToDirectory,csvFile,sep = "/")
         if(file.exists(pathToFile)){
                 return(pathToFile)
@@ -9,9 +9,12 @@ filepath <- function(filename,pathToDirectory){
                 stop("file dose not exist")
         }
 }
-dirPath <- function(){
+dirPath <- function(directory= NULL){
         currentpath <- getwd()
-        pathToDirectory <- paste(currentpath,"module2_R_Programming","Week4_Programming_Assignment","HospitalDataSet",sep = "/")
+        pathToDirectory <- paste(currentpath,"module2_R_Programming","Week4_Programming_Assignment",sep = "/")
+        if(!is.null(directory)){
+                pathToDirectory <- paste(pathToDirectory,directory,sep = "/")
+        }
         if(dir.exists(pathToDirectory)){
                 return(pathToDirectory)
         }else{
@@ -41,11 +44,10 @@ simpleHisto <- function(data){
 }
 run <-function(){
         ## Get directory PATH
-        dir<-dirPath()
-        
+        dir<-dirPath("HospitalDataSet")
         ## Get filePATH
         # file<-filepath("hospital-data")
-        file<-filepath("outcome-of-care-measures",dir)
+        file<-filepath("outcome-of-care-measures",dir,"csv")
         ## Read CSV
         outcome<-read.csv(file,colClasses = "character")
         
@@ -56,5 +58,7 @@ run <-function(){
         # simpleHisto(outcom)
         
         ## Find best hospital in a state.
+        source(filepath("best",dirPath(),"R"))
+        best("TX","heart attack",outcome)
 }
 run()
