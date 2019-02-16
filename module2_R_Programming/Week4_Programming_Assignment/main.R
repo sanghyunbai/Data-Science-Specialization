@@ -78,7 +78,10 @@ run <-function(){
         # print(paste("Result  ",best("MD", "pneumonia",outcome),sep = ":"))
         
         # Part3; Rank hospitals 
-        # source(filepath("rankhospital",dirPath(),"R"))
+        source(filepath("rankhospital",dirPath(),"R"))
+        #test 0
         rankhospital("TX","heart failure",4,outcome)
+        # rankhospital("TX1","heart failure",4,outcome)
+        rankhospital("TX","heart failure1",4,outcome)
 }
 run()
