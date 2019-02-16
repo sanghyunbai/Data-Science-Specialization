@@ -22,5 +22,54 @@ rankhospital <- function(specified_state,specified_outcome,num ="best",data){
                 stop('invalid outcome')
         }
         
+        #filter to chosen state, Only look at specified state, so we only look at rows where contains specifified_state 
+        data<-filter(data,data$State == specified_state)
         
+        # filter to hospital name and columnes containing "Hospital.30.Day.Death ... . from specified outcome"
+        # select columns containing name : Hospital.Name, pattern of "hospital.30.day.death" 
+        # check grep();  print lines matching a pattern # also check linux command grep()
+        # Generally PCRE will be faster than the default regular expression engine, and 
+        # fixed = TRUE faster still (especially when each pattern is matched only a few times) 
+        data <-select(data, Hospital.Name, colnames(data)[grep("Hospital.30.Day.Death",colnames(data))])
+        
+        #filter again to specified_outcome
+        sOut <- "Pneumonia";
+        if(specified_outcome == "heart attack"){
+                sOut <- "Heart.Attack"
+        }else if(specified_outcome =="heart failure"){
+                sOut <- "Heart.Failure"
+        }
+        data <-select(data, Hospital.Name, colnames(data)[grep(sOut,colnames(data))])
+        # head(data)
+        
+        # Exclude columns containing Footnote, Patients,Upper,Lower,Comparison
+        check <- colnames(data)[grep("Footnote|Patients|Lower|Upper|Comparison",colnames(data))] 
+        data<- select(data, -check)
+        
+        #rename col2
+        colnames(data)[2] <- "DeathRate"        
+        # Substitute "Not Avaiable" to NA
+        data$DeathRate <- gsub("Not Available", NA, data$DeathRate)
+        if(!is.numeric(data$DeathRate)){
+                data$DeathRate <- as.numeric(as.character(data$DeathRate))
+        }
+
+        # Discard NA 
+        completedData <-data[complete.cases(data),]
+
+        # Sort by # Death Rate (Ascending) & Name (Ascending) 
+        sortedIndex <-order(completedData$DeathRate, completedData$Hospital.Name)
+        sortedData<-completedData[sortedIndex, ]
+
+        #Check what row is needed
+        if(num == "worst"){
+                # print("worst")
+                num <-nrow(sortedData)
+        }else if(num == "best"){
+                # print("best")
+                num <-1
+        }
+        
+        #RETURN
+        sortedData[num, "Hospital.Name"]
 }
