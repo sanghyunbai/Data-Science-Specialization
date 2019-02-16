@@ -1,3 +1,6 @@
 [submodule "module1_DataScienceToolBox/datasciencecoursera"]
 	path = module1_DataScienceToolBox/datasciencecoursera
 	url = https://github.com/sanghyunbai/datasciencecoursera.git
+[submodule "module2_R_Programming/Week3_Programming_Assignment/ProgrammingAssignment2"]
+	path = module2_R_Programming/Week3_Programming_Assignment/ProgrammingAssignment2
+	url = https://github.com/sanghyunbai/ProgrammingAssignment2.git
