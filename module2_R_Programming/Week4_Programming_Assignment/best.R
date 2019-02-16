@@ -5,6 +5,12 @@
 ## partial matching 
 best <- function(specified_state,specified_outcome,data){
         library(dplyr)
-        print("in")
-
+        #check if state is valid 
+        if(!is.element(specified_state,data$State)){
+                stop("invalid state")
+        }
+        #check if specified_outcome is valid 
+        if (!is.element(specified_outcome,c("heart attack", "heart failure", "pneumonia"))) {
+                stop('invalid outcome')
+        }
 }

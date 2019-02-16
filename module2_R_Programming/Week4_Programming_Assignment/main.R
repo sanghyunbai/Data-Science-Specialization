@@ -59,6 +59,7 @@ run <-function(){
         
         ## Find best hospital in a state.
         source(filepath("best",dirPath(),"R"))
-        best("TX","heart attack",outcome)
+        best("TX","heart attack1",outcome)
+        best("TX1","heart attack",outcome)
 }
 run()
