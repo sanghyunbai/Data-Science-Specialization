@@ -57,24 +57,28 @@ run <-function(){
         ##Simple histogram
         # simpleHisto(outcom)
         
-        ## Find best hospital in a state.
-        source(filepath("best",dirPath(),"R"))
-        #test 0
-        # best("TX","heart attack1",outcome)
-        # best("TX1","heart attack",outcome)
-        # best("BB", "heart attack",outcome)
-        # best("NY", "hert attack",outcome)
-        #test 1
-        print("Expected:CYPRESS FAIRBANKS MEDICAL CENTER")
-        print(paste("Result  ",best("TX","heart attack",outcome),sep = ":"))
-        #test 2
-        print("Expected:FORT DUNCAN MEDICAL CENTER")
-        print(paste("Result  ",best("TX", "heart failure",outcome),sep = ":"))
-        #test 3
-        print("Expected:JOHNS HOPKINS HOSPITAL, THE")
-        print(paste("Result  ",best("MD", "heart attack",outcome),sep = ":"))
-        #test 4
-        print("Expected:GREATER BALTIMORE MEDICAL CENTER")
-        print(paste("Result  ",best("MD", "pneumonia",outcome),sep = ":"))
+        ## Part2; Find best hospital in a state.
+        # source(filepath("best",dirPath(),"R"))
+        # #test 0
+        # # best("TX","heart attack1",outcome)
+        # # best("TX1","heart attack",outcome)
+        # # best("BB", "heart attack",outcome)
+        # # best("NY", "hert attack",outcome)
+        # #test 1
+        # print("Expected:CYPRESS FAIRBANKS MEDICAL CENTER")
+        # print(paste("Result  ",best("TX","heart attack",outcome),sep = ":"))
+        # #test 2
+        # print("Expected:FORT DUNCAN MEDICAL CENTER")
+        # print(paste("Result  ",best("TX", "heart failure",outcome),sep = ":"))
+        # #test 3
+        # print("Expected:JOHNS HOPKINS HOSPITAL, THE")
+        # print(paste("Result  ",best("MD", "heart attack",outcome),sep = ":"))
+        # #test 4
+        # print("Expected:GREATER BALTIMORE MEDICAL CENTER")
+        # print(paste("Result  ",best("MD", "pneumonia",outcome),sep = ":"))
+        
+        # Part3; Rank hospitals 
+        # source(filepath("rankhospital",dirPath(),"R"))
+        rankhospital("TX","heart failure",4,outcome)
 }
 run()
