@@ -16,13 +16,26 @@ filepath <- function(filename){
         }
 }
 
+## Function prints info about the dataset
+structureCheck <- function(data){
+        # print(head(data))
+        # print(ncol(data)) #Check num columns
+        print(names(data)) #Check names of columns
+        # print(row.names(data)) #Check names of rows
+        # str(data)
+        # summary(data)
+        # print(data$State)
+}
+
 run <-function(){
         ## Get filePATH
         # file<-filepath("hospital-data")
         file<-filepath("outcome-of-care-measures")
         ## Read CSV
         outcome<-read.csv(file,colClasses = "character")
-        head(outcome)
-
+        
+        ## Structure check 
+        structureCheck(outcome)
+        
 }
 run()
