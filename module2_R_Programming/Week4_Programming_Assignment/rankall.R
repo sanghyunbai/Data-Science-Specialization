@@ -9,5 +9,9 @@
 ## in the same way that therankhospitalfunction handles ties.
 
 rankall <- function(specified_outcome, num="best"){
-        print("in?")
+        #check if specified_outcome is valid 
+        if (!is.element(specified_outcome,c("heart attack", "heart failure", "pneumonia"))) {
+                stop('invalid outcome')
+        }
+        
 }
