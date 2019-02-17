@@ -94,6 +94,13 @@ run <-function(){
         
         ## Part4; Rank hospitals for all states
         source(filepath("rankall",dirPath(),"R"))
-        rankall("heart attack",20)
+        # #test 0
+        # rankall("heart attack",20,outcome)
+        # test 1
+        head(rankall("heart attack", 20,outcome), 10)
+        # test 2
+        # tail(rankall("pneumonia", "worst",outcome), 3)
+        # test 3
+        # tail(rankall("heart failure",data=outcome), 10)
 }
 run()
