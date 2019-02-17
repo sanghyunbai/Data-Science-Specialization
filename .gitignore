@@ -5,6 +5,7 @@
 
 #Dont track content of these folders
 private_Git_Ignore/
+module2_R_Programming/Week4_Programming_Assignment/quiz/
 
 #Dont add Packages to git 
 *.7z
