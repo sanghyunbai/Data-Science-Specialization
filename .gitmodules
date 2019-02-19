@@ -4,3 +4,6 @@
 [submodule "module2_R_Programming/Week3_Programming_Assignment/ProgrammingAssignment2"]
 	path = module2_R_Programming/Week3_Programming_Assignment/ProgrammingAssignment2
 	url = https://github.com/sanghyunbai/ProgrammingAssignment2.git
+[submodule "module3_GettingAndCleaning_Data/Getting-and-Cleaning-Data-Course-Project-Submission"]
+	path = module3_GettingAndCleaning_Data/Getting-and-Cleaning-Data-Course-Project-Submission
+	url = https://github.com/sanghyunbai/Getting-and-Cleaning-Data-Course-Project-Submission.git
