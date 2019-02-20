@@ -7,3 +7,6 @@
 [submodule "module3_GettingAndCleaning_Data/Getting-and-Cleaning-Data-Course-Project-Submission"]
 	path = module3_GettingAndCleaning_Data/Getting-and-Cleaning-Data-Course-Project-Submission
 	url = https://github.com/sanghyunbai/Getting-and-Cleaning-Data-Course-Project-Submission.git
+[submodule "module4_Exploratory_Data_Analysis/week1/ExData_Plotting1"]
+	path = module4_Exploratory_Data_Analysis/week1/ExData_Plotting1
+	url = https://github.com/sanghyunbai/ExData_Plotting1.git
