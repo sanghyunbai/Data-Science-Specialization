@@ -10,3 +10,6 @@
 [submodule "module4_Exploratory_Data_Analysis/week1/ExData_Plotting1"]
 	path = module4_Exploratory_Data_Analysis/week1/ExData_Plotting1
 	url = https://github.com/sanghyunbai/ExData_Plotting1.git
+[submodule "module4_Exploratory_Data_Analysis/week2/Exploratory-Data-Analysis-Week4-assignment"]
+	path = module4_Exploratory_Data_Analysis/week2/Exploratory-Data-Analysis-Week4-assignment
+	url = https://github.com/sanghyunbai/Exploratory-Data-Analysis-Week4-assignment.git
